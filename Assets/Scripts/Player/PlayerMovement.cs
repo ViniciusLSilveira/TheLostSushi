@@ -10,6 +10,9 @@ public class PlayerMovement : MonoBehaviour {
     [Header("Move")]
     public float m_Speed = 8.0f;
 
+    [SerializeField]
+    private Joystick m_Joystick;
+
     private Vector2 m_Movement;
 
     [Header("Ground")]
@@ -59,6 +62,9 @@ public class PlayerMovement : MonoBehaviour {
         // Pega o componente Animator atrelado ao objeto
         m_Animator = GetComponent<Animator>();
 
+        // Se não tiver joystick associado, pegar qualquer joystick da cena
+        if (!m_Joystick) m_Joystick = GameObject.FindObjectOfType<Joystick>();
+
         // Garantir que quando a fase iniciar o player pode se mover
         m_LockMove = false;
     }
@@ -73,7 +79,7 @@ public class PlayerMovement : MonoBehaviour {
                 m_IsGrounded = true;
         }
 
-        m_Movement.x = Input.GetAxisRaw("Horizontal");
+        m_Movement.x = m_Joystick.Horizontal;
 
         if (Input.GetButtonDown("Jump") && m_IsGrounded) {
             m_IsJumping = true;

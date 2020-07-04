@@ -40,11 +40,11 @@ GameObject:
   m_Component:
   - component: {fileID: 2672881023474763782}
   - component: {fileID: 2672881023474763783}
-  - component: {fileID: 2672881023474763776}
   - component: {fileID: 160393092373499373}
-  - component: {fileID: 3838618831730421393}
   - component: {fileID: 3192726171373510678}
+  - component: {fileID: 3838618831730421393}
   - component: {fileID: 482733909332456104}
+  - component: {fileID: 2672881023474763776}
   m_Layer: 9
   m_Name: Sushi
   m_TagString: Player
@@ -118,25 +118,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &2672881023474763776
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2672881023474763777}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 4cac6843c31249343a8558292efad97d, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &160393092373499373
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -152,6 +133,27 @@ MonoBehaviour:
   m_MaxLife: 3
   m_Spawn: {fileID: 0}
   m_ButtonToRestart: Restart
+--- !u!114 &3192726171373510678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2672881023474763777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac01175d96c593c419c66aa1a754ff3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Speed: 8
+  m_Joystick: {fileID: 0}
+  m_GroundLayer:
+    serializedVersion: 2
+    m_Bits: 256
+  m_GroundCheckSize: {x: 1, y: 0.1}
+  m_Feet: {fileID: 3624423745611793973}
+  m_JumpForce: 135
+  m_JumpTime: 0.33
 --- !u!61 &3838618831730421393
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -178,26 +180,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.2332419, y: 1.1968933}
   m_EdgeRadius: 0
---- !u!114 &3192726171373510678
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2672881023474763777}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac01175d96c593c419c66aa1a754ff3b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Speed: 8
-  m_GroundLayer:
-    serializedVersion: 2
-    m_Bits: 256
-  m_GroundCheckSize: {x: 1, y: 0.1}
-  m_Feet: {fileID: 3624423745611793973}
-  m_JumpForce: 135
-  m_JumpTime: 0.33
 --- !u!50 &482733909332456104
 Rigidbody2D:
   serializedVersion: 4
@@ -219,3 +201,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!95 &2672881023474763776
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2672881023474763777}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4cac6843c31249343a8558292efad97d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
