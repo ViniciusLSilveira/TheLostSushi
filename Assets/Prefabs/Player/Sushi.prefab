@@ -152,7 +152,7 @@ MonoBehaviour:
     m_Bits: 256
   m_GroundCheckSize: {x: 1, y: 0.1}
   m_Feet: {fileID: 3624423745611793973}
-  m_JumpForce: 135
+  m_JumpForce: 900
   m_JumpTime: 0.33
 --- !u!61 &3838618831730421393
 BoxCollider2D:

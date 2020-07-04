@@ -2,11 +2,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class DialogManager : MonoBehaviour
 {
+    public bool m_IsOpen { get; private set; }
     public static DialogManager Instance { get; private set; }
 
     private void Awake()
@@ -24,11 +24,14 @@ public class DialogManager : MonoBehaviour
     public Text m_SkipText;
     public Image m_PlayerImage;
     public Image m_ReferencePointImage;
+    
+    [Header("Joystick")]
+    [SerializeField]
+    private GameObject m_MobileCanvas;
 
     [Header("Animator")]
     public Animator m_Animator;
     private Queue<DialogSentence> m_Sentences = new Queue<DialogSentence>();
-    public bool m_IsOpen { get; private set; }
 
     public void OpenDialogAnimation(bool open)
     {
@@ -44,6 +47,7 @@ public class DialogManager : MonoBehaviour
             return;
         }
 
+        if(m_MobileCanvas) m_MobileCanvas.SetActive(false);
         OpenDialogAnimation(true);
         m_Sentences.Clear();
         UpdateUI(dialog);

@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Player : MonoBehaviour {
     public int Life { get; private set; }
@@ -15,10 +13,6 @@ public class Player : MonoBehaviour {
     [Tooltip("Posição em que o jogador retorna quando morrer")]
     private Transform m_Spawn;
 
-    [SerializeField]
-    [Tooltip("Botão que o jogador precisará apertar para resetar a posição para o último checkpoint")]
-    private string m_ButtonToRestart = "Restart";
-
     private void Awake() {
         Life = m_MaxLife;
         if (m_Spawn == null) m_Spawn = GameObject.Find("Spawn").transform;
@@ -31,12 +25,6 @@ public class Player : MonoBehaviour {
         if (FindObjectOfType<PlayMenuMusic>()) Destroy(FindObjectOfType<PlayMenuMusic>().gameObject);
 
         PointsUIManager.Instance.UpdatePointsUI(m_Points);
-    }
-
-    private void Update() {
-        if (Input.GetButtonDown(m_ButtonToRestart)) {
-            ResetPosition();
-        }
     }
 
     public void TakeDamage(int damage) {

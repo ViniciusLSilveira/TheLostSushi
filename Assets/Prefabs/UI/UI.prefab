@@ -102,6 +102,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1242404771409160845}
     m_Modifications:
+    - target: {fileID: 916732685382313559, guid: a3e653d656883d744ac8754e0a83aed9,
+        type: 3}
+      propertyPath: m_JoystickCanvas
+      value: 
+      objectReference: {fileID: 7519895392695286427}
+    - target: {fileID: 916732685382313559, guid: a3e653d656883d744ac8754e0a83aed9,
+        type: 3}
+      propertyPath: m_MobileCanvas
+      value: 
+      objectReference: {fileID: 7519895392695286427}
     - target: {fileID: 4639331560431427657, guid: a3e653d656883d744ac8754e0a83aed9,
         type: 3}
       propertyPath: m_SortingOrder
@@ -684,6 +694,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8234020727441755843, guid: 044d4dd54cc4c574daef2ef3e4658499,
+        type: 3}
+      propertyPath: m_MobileCanvas
+      value: 
+      objectReference: {fileID: 7519895392695286427}
     - target: {fileID: 9065654398805713906, guid: 044d4dd54cc4c574daef2ef3e4658499,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -702,6 +717,18 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1242404772710248941}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7167750073822641966 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8234020727441755843, guid: 044d4dd54cc4c574daef2ef3e4658499,
+    type: 3}
+  m_PrefabInstance: {fileID: 1242404772710248941}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc47caaec1b227d40bfcb2af341b6b0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1242404772986642490
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -962,13 +989,89 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 115
       objectReference: {fileID: 0}
+    - target: {fileID: 4642793767379731684, guid: 908c0deb3839d1f4cac32016e326865e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4642793767379731684, guid: 908c0deb3839d1f4cac32016e326865e,
+        type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4642793767379731684, guid: 908c0deb3839d1f4cac32016e326865e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Jump
+      objectReference: {fileID: 0}
+    - target: {fileID: 4642793767379731684, guid: 908c0deb3839d1f4cac32016e326865e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4642793767379731684, guid: 908c0deb3839d1f4cac32016e326865e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4642793767379731684, guid: 908c0deb3839d1f4cac32016e326865e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4642793767379731684, guid: 908c0deb3839d1f4cac32016e326865e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5590789341926400384, guid: 908c0deb3839d1f4cac32016e326865e,
+        type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 7167750073822641966}
+    - target: {fileID: 6536910253223819992, guid: 908c0deb3839d1f4cac32016e326865e,
+        type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6536910253223819992, guid: 908c0deb3839d1f4cac32016e326865e,
+        type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: Jump
+      objectReference: {fileID: 0}
+    - target: {fileID: 6536910253223819992, guid: 908c0deb3839d1f4cac32016e326865e,
+        type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6536910253223819992, guid: 908c0deb3839d1f4cac32016e326865e,
+        type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6536910253223819992, guid: 908c0deb3839d1f4cac32016e326865e,
+        type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6890568392976870908, guid: 908c0deb3839d1f4cac32016e326865e,
         type: 3}
       propertyPath: m_Name
       value: Mobile Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 7524207939510465452, guid: 908c0deb3839d1f4cac32016e326865e,
+        type: 3}
+      propertyPath: snapX
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 908c0deb3839d1f4cac32016e326865e, type: 3}
+--- !u!1 &7519895392695286427 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6890568392976870908, guid: 908c0deb3839d1f4cac32016e326865e,
+    type: 3}
+  m_PrefabInstance: {fileID: 4034168044595533671}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &2663804842061463861 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1372333540793079378, guid: 908c0deb3839d1f4cac32016e326865e,

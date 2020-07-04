@@ -55,7 +55,8 @@ public class FinishLevel : MonoBehaviour
     }
 
     public void ChangeScene() {
-        ScreenManager.Instance.LoadLevelLoading(m_NextScene);
+        if(m_NextScene == "Credits") ScreenManager.Instance.LoadLevel(m_NextScene);
+        else ScreenManager.Instance.LoadLevelLoading(m_NextScene);
     }
 
 }

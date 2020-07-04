@@ -10,6 +10,9 @@ public class PlayerMovement : MonoBehaviour {
     [Header("Move")]
     public float m_Speed = 8.0f;
 
+    [Header("Mobile")]
+    [SerializeField]
+    private GameObject m_MobileCanvas;
     [SerializeField]
     private Joystick m_Joystick;
 
@@ -28,11 +31,9 @@ public class PlayerMovement : MonoBehaviour {
 
     [Header("Jump")]
     [SerializeField]
-    private float m_JumpForce = 100.0f;
+    private float m_JumpForce = 900.0f;
     [SerializeField]
     private float m_JumpTime = 0.33f;
-
-    private float m_JumpElapsedTime;
 
     private bool m_IsGrounded;
     private bool m_IsJumping;
@@ -62,6 +63,9 @@ public class PlayerMovement : MonoBehaviour {
         // Pega o componente Animator atrelado ao objeto
         m_Animator = GetComponent<Animator>();
 
+        // Habilita o canvas que permite a movimentação do jogador
+        if (m_MobileCanvas) m_MobileCanvas.SetActive(true);
+
         // Se não tiver joystick associado, pegar qualquer joystick da cena
         if (!m_Joystick) m_Joystick = GameObject.FindObjectOfType<Joystick>();
 
@@ -81,12 +85,6 @@ public class PlayerMovement : MonoBehaviour {
 
         m_Movement.x = m_Joystick.Horizontal;
 
-        if (Input.GetButtonDown("Jump") && m_IsGrounded) {
-            m_IsJumping = true;
-            m_IsGrounded = false;
-            m_JumpElapsedTime = 0;
-        }
-
         if (m_Movement.x > 0 && m_FacingRight) {
             Rotate();
         }
@@ -103,7 +101,6 @@ public class PlayerMovement : MonoBehaviour {
             return;
         }
         Move();
-        Jump();
         Animate();
     }
 
@@ -119,33 +116,14 @@ public class PlayerMovement : MonoBehaviour {
         m_Renderer.flipX = !m_Renderer.flipX;
     }
 
-    private void Jump() {
-        // Se o jogador pular e o tempo passado depois de apertar o botão for maior que 1/3 do tempo total
-        if (m_IsJumping && m_JumpElapsedTime > (m_JumpTime / 3)) {
-            // E o jogador soltou o botão
-            if (!Input.GetButton("Jump")) {
-                // Então pare de acumular força para o pulo
-                m_IsJumping = false;
-            }
-        }
+    public void Jump(bool jump) {
+        m_IsJumping = jump;
+        
+        if (!m_IsGrounded) return;
+        
+        m_Body.AddForce(Vector2.up * m_JumpForce);
 
-        // Se o jogador pular e o tempo passado depois de apertar o botão for menor que o tempo total
-        if (m_IsJumping && m_JumpElapsedTime < m_JumpTime) {
-            // Aumentar o tempo passado 
-            m_JumpElapsedTime += Time.fixedDeltaTime;
-            // Cria uma variavel para checar a proporção do tempo passado em relação ao tempo total e fixar ela entre 0 e 1
-            float proportionCompleted = Mathf.Clamp01(m_JumpElapsedTime / m_JumpTime);
-            // A força atual do pulo de acordo com a proporção
-            float currentForce = Mathf.Lerp(m_JumpForce, 0.0f, proportionCompleted);
-
-            // Adiciona força ao corpo rígido do jogador de acordo com a força atual
-            m_Body.AddForce(Vector2.up * currentForce);
-        }
-        // Se não estiver pulando ou ja passou o tempo total
-        else {
-            // parar de adicionar força ao pulo
-            m_IsJumping = false;
-        }
+        m_IsJumping = false;
     }
 
     private void Animate() {

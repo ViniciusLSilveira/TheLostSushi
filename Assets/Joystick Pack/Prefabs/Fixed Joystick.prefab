@@ -88,9 +88,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   handleRange: 1
-  deadZone: 0
-  axisOptions: 0
-  snapX: 0
+  deadZone: 0.3
+  axisOptions: 1
+  snapX: 1
   snapY: 0
   background: {fileID: 2929252283123773938}
   handle: {fileID: 2929252285020697096}
