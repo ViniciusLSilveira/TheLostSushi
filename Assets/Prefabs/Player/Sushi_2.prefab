@@ -292,10 +292,9 @@ GameObject:
   - component: {fileID: 575732294222204562}
   - component: {fileID: 7083209858914640975}
   - component: {fileID: 2520117443053093325}
-  - component: {fileID: 2520117443053093323}
   - component: {fileID: 2520117443053093320}
   m_Layer: 9
-  m_Name: Player
+  m_Name: Sushi_2
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -449,34 +448,6 @@ MonoBehaviour:
   m_Feet: {fileID: 2520117442345746603}
   m_JumpForce: 100
   m_JumpTime: 0.33
---- !u!114 &2520117443053093323
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2520117443053093334}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 57c008f954fe54a8bb972de1018a2cb8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_RootBone: {fileID: 2520117443624829542}
-  m_BoneTransforms:
-  - {fileID: 2520117442814765734}
-  - {fileID: 2520117442039968635}
-  - {fileID: 2520117443394075996}
-  - {fileID: 2520117442388432095}
-  - {fileID: 2520117442704551444}
-  - {fileID: 2520117442252415800}
-  - {fileID: 2520117442504640893}
-  - {fileID: 2520117441719985504}
-  - {fileID: 2520117442946647527}
-  - {fileID: 2520117443624829542}
-  m_Bounds:
-    m_Center: {x: 0.09187484, y: 0.33513898, z: -0.000010103396}
-    m_Extent: {x: 1.1703205, y: 0.79084915, z: 0.000010103396}
-  m_UseBatching: 1
 --- !u!95 &2520117443053093320
 Animator:
   serializedVersion: 3
