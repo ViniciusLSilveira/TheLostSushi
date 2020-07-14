@@ -3,6 +3,10 @@ using UnityEngine;
 
 public class FinishLevel : MonoBehaviour
 {
+    [Header("Save")]
+    [SerializeField]
+    [Tooltip("Nome do arquivo de save dessa cena")]
+    private string m_ThisLevelSaveFile;
 
     [Header("Animation")]
     [SerializeField]
@@ -27,34 +31,40 @@ public class FinishLevel : MonoBehaviour
 
     private bool m_ZoomCamera;
 
-    private void OnTriggerEnter2D(Collider2D collision) {
-        if (collision.CompareTag("Player")) {
-            collision.GetComponent<Player>().SetPlayerMaxPoints();
-            collision.GetComponent<PlayerMovement>().LockPlayerMovement(true);
-            m_ZoomCamera = true;
-        }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (!collision.CompareTag("Player")) return;
+
+        collision.GetComponent<Player>().SetPlayerMaxPoints();
+        collision.GetComponent<PlayerMovement>().LockPlayerMovement(true);
+        m_ZoomCamera = true;
+        StateManager.Instance.Save();
+        StateManager.Instance.PersistentSave(m_ThisLevelSaveFile);
         if (m_FinishLevelAnim) BeginFinishLevelAnimation();
         GetComponentInChildren<DialogTrigger>().ToggleDialog(true); // Mudar quando tiver animação de fim de nível
     }
 
-    private void BeginFinishLevelAnimation() {
+    private void BeginFinishLevelAnimation()
+    {
         m_FinishLevelAnim.SetTrigger("Finish");
         if (m_FinishLevelAnim.GetBool("hasFinished")) {
             GetComponentInChildren<DialogTrigger>().ToggleDialog(true);
         }
     }
 
-    private void Update() {
+    private void Update()
+    {
         if (!m_ZoomCamera) return;
-        
+
         CmVCam.m_Lens.OrthographicSize -= Time.deltaTime * m_SpeedZoomMultiplier;
-        if(CmVCam.m_Lens.OrthographicSize <= m_DesiredZoom) {
+        if (CmVCam.m_Lens.OrthographicSize <= m_DesiredZoom) {
             CmVCam.m_Lens.OrthographicSize = m_DesiredZoom;
             m_ZoomCamera = false;
         }
     }
 
-    public void ChangeScene() {
+    public void ChangeScene()
+    {
         ScreenManager.Instance.LoadLevelLoading(m_NextScene);
     }
 

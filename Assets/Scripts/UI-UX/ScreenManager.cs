@@ -39,6 +39,10 @@ public class ScreenManager : MonoBehaviour {
         }
     }
 
+    public void LoadCurrentScene(bool loading) {
+        ChangeScene(SceneManager.GetActiveScene().name, loading);
+    }
+
     public void LoadLevel(string nextSceneName) {
         StartCoroutine(ChangeScene(nextSceneName, false));
     }

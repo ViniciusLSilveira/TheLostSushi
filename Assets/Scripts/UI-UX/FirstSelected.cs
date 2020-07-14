@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class FirstSelected : MonoBehaviour
@@ -11,7 +9,6 @@ public class FirstSelected : MonoBehaviour
     private void OnEnable()
     {
         SelectFirstObject();
-
     }
 
     private void SelectFirstObject()
