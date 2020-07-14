@@ -3,7 +3,10 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Fire
+  - Ground
+  - Ball
   layers:
   - Default
   - TransparentFX
@@ -13,9 +16,9 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
+  - Ground
+  - Player
+  - Collectable
   - 
   - 
   - 
@@ -40,4 +43,28 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: bg_0
+    uniqueID: 1874227709
+    locked: 0
+  - name: bg_1
+    uniqueID: 2785711593
+    locked: 0
+  - name: veg_back
+    uniqueID: 568787349
+    locked: 0
+  - name: plat_0
+    uniqueID: 3358396835
+    locked: 0
+  - name: player
+    uniqueID: 840351745
+    locked: 0
+  - name: veg_front
+    uniqueID: 1536119951
+    locked: 0
+  - name: sea_4
+    uniqueID: 220647427
+    locked: 0
+  - name: UI
+    uniqueID: 4244806741
     locked: 0
