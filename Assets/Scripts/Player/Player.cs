@@ -1,82 +1,48 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class Player : MonoBehaviour {
+public class Player : MonoBehaviour
+{
     public int Life { get; private set; }
 
     private int m_Points;
 
-    [SerializeField]
-    [Tooltip("Quanto de vida o jogador tem")]
-    private int m_MaxLife = 3;
+    private PlayerMovement m_PlayerMovement;
 
-    [SerializeField]
-    [Tooltip("Posição em que o jogador retorna quando morrer")]
-    private Transform m_Spawn;
+    private Transform m_Transform;
 
-    [SerializeField]
-    [Tooltip("Botão que o jogador precisará apertar para resetar a posição para o último checkpoint")]
-    private string m_ButtonToRestart = "Restart";
+    private void Start()
+    {
+        m_PlayerMovement = GetComponent<PlayerMovement>();
+        m_Transform = GetComponent<Transform>();
 
-    private void Awake() {
-        Life = m_MaxLife;
-        if (m_Spawn == null) m_Spawn = GameObject.Find("Spawn").transform;
-    }
-
-    private void Start() {
-        if (m_Spawn) transform.position = m_Spawn.position;
+        m_Transform.position = GameManager.Instance.m_Spawn.position;
         LifeUIManager.Instance.UpdateHeartUI(Life);
 
-        if (FindObjectOfType<PlayMenuMusic>()) Destroy(FindObjectOfType<PlayMenuMusic>().gameObject);
+        PlayMenuMusic pmm = FindObjectOfType<PlayMenuMusic>();
+        if (pmm) Destroy(pmm.gameObject);
 
         PointsUIManager.Instance.UpdatePointsUI(m_Points);
     }
 
-    private void Update() {
-        if (Input.GetButtonDown(m_ButtonToRestart)) {
-            ResetPosition();
-        }
-    }
-
-    public void TakeDamage(int damage) {
-        Life -= damage;
-        if (Life <= 0) {
-            Life = 0;
-            Die();
-        }
-        LifeUIManager.Instance.UpdateHeartUI(Life);
-    }
-
-    public bool RegenerateHealth(int amount) {
-        Life += amount;
-
-        if (Life > m_MaxLife) {
-            Life = m_MaxLife;
-            return false;
-        }
-
-        LifeUIManager.Instance.UpdateHeartUI(Life);
-
-        return true;
-    }
-
-    public void AddPoints(int points) {
+    public void AddPoints(int points)
+    {
         m_Points += points;
         PointsUIManager.Instance.UpdatePointsUI(m_Points);
     }
 
-    public void SetPlayerMaxPoints() {
+    public void SetPlayerMaxPoints()
+    {
         PlayerPrefs.SetInt("Points", PlayerPrefs.GetInt("Points", 0) + m_Points);
     }
 
-    private void Die() {
-        Life = 3;
-        ResetPosition();
+    public int GetPoints()
+    {
+        return m_Points;
     }
 
-    private void ResetPosition() {
-        transform.position = m_Spawn.transform.position;
+    public void Die()
+    {
+        m_PlayerMovement.LockPlayerMovement(true);
     }
 
 }

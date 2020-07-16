@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 4442348162537726760}
   - component: {fileID: 4442348162537726762}
   - component: {fileID: 4442348162537726761}
-  - component: {fileID: 4442348162537726763}
   - component: {fileID: 7277273999050266015}
+  - component: {fileID: 5195535948182434233}
   m_Layer: 8
   m_Name: plat_diseappear
   m_TagString: Ground
@@ -71,7 +71,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -936570461
-  m_SortingLayer: 0
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 4c98502bb5279d142a02e7a6a39419b1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -110,20 +110,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.46, y: 1.12}
   m_EdgeRadius: 0
---- !u!114 &4442348162537726763
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4442348162537726775}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e0f800dec692354e8c9436f9187c9e3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_TimeToDestroy: 1.5
-  m_TimeToAppearAgain: 5
 --- !u!61 &7277273999050266015
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -150,3 +136,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.1777458, y: 0.03181362}
   m_EdgeRadius: 0
+--- !u!114 &5195535948182434233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4442348162537726775}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c342a67f4ad87bb4ca47489ea24f3dfd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 0, y: 0}
+  m_CenterPosition: {x: 0, y: 0, z: 0}

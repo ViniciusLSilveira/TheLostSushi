@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 114303530290528147}
   - component: {fileID: 114303530290528157}
   - component: {fileID: 114303530290528156}
+  - component: {fileID: 6790665677936224323}
   m_Layer: 8
   m_Name: plat_big
   m_TagString: Ground
@@ -110,6 +111,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 4.57, y: 1.0887709}
   m_EdgeRadius: 0
+--- !u!114 &6790665677936224323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 114303530290528146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c342a67f4ad87bb4ca47489ea24f3dfd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &114303530955360750
 GameObject:
   m_ObjectHideFlags: 0

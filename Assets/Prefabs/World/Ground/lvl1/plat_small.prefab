@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6410101637396044027}
   - component: {fileID: 6410101637396044024}
   - component: {fileID: 231424027004743200}
+  - component: {fileID: 8995385567810221893}
   m_Layer: 8
   m_Name: plat_small
   m_TagString: Ground
@@ -128,3 +129,15 @@ PlatformEffector2D:
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
+--- !u!114 &8995385567810221893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6410101637396044006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c342a67f4ad87bb4ca47489ea24f3dfd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

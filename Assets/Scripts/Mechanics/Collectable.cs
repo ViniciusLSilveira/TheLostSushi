@@ -23,9 +23,6 @@ public class Collectable : MonoBehaviour
                 case CollectableType.Points:
                     p.AddPoints(1);
                     break;
-                case CollectableType.Life:
-                    m_CanDestroy = p.RegenerateHealth(1);
-                    break;
             }
             
             if(m_CanDestroy) Destroy(this.gameObject);
